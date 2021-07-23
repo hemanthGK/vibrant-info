@@ -1,0 +1,66 @@
+<div>
+  <button mat-button (click) = "close()">X</button>
+  <mat-card >
+    <h1 >New User Form</h1>
+    <form [formGroup]="registerForm" (submit)="submitForm()">
+      <mat-form-field >
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="firstName" placeholder="Ex. Hossein Mousavi" />
+        <mat-error *ngIf="registerForm.get('firstName').hasError('required')">
+          Full Name is required
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput formControlName="lastName" placeholder="Ex. Hossein Mousavi" />
+        <mat-error *ngIf="registerForm.get('lastName').hasError('required')">
+          Full Name is required
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>Phone Number</mat-label>
+        <input type="number" matInput formControlName="phoneNumber" />
+        <mat-error *ngIf="registerForm.get('phoneNumber').hasError('required')">
+          Phone is required
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Ex. mail@gmail.com" />
+        <mat-error *ngIf="
+            registerForm.get('email').hasError('email') &&
+            !registerForm.get('email').hasError('required')
+          ">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="registerForm.get('email').hasError('required')">
+          Email is required
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>Address</mat-label>
+        <input type="text" matInput formControlName="address" />
+        <mat-error *ngIf="registerForm.get('address').hasError('required')">
+          Address is required
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>pincode</mat-label>
+        <input type="number" matInput formControlName="pincode" />
+        <mat-error *ngIf="registerForm.get('pincode').hasError('required')">
+          pincode is required
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <button [disabled]="!registerForm.valid" mat-flat-button color="primary" type="submit">
+        Submit
+      </button>
+      <br />
+    </form>
+  </mat-card>
+</div>

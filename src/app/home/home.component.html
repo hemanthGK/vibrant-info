@@ -1,0 +1,52 @@
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="searchFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+
+<button (click)="editUsers()">New User</button>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef> First name </th>
+      <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef> Last Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element; let i = index;"> <button mat-icon-button matTooltip="Click to Edit"
+          class="iconbutton" color="primary" (click)="editUsers(i)">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn" (click)="deleteUser(i)">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSize]="3" [pageSizeOptions]="[3, 5, 10]" (page)="pageEvents($event)"></mat-paginator>
+</div>
