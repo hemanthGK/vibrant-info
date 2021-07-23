@@ -1,3 +1,10 @@
+.table-top {
+  padding: 0 20px;
+}
+.table-container {
+  width: 80%;
+  margin: 15px auto 0;
+}
 table {
   width: 100%;
 }

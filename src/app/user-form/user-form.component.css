@@ -1,0 +1,22 @@
+.new-user-form {
+  min-width: 380px;
+  position: relative;
+}
+.new-user-form .mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: inherit;
+}
+.new-user-form .mat-form-field {
+  width:100%;
+}
+.close-btn {
+  position: absolute;
+  top:0px;
+  right: 0px;
+  z-index: 1;
+}
+.circle {
+  min-width: 40px;
+  width:40px;
+  border-radius: 50%;
+  height: 40px;
+}

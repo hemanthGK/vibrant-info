@@ -1,11 +1,13 @@
-<mat-form-field appearance="standard">
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="searchFilter($event)" placeholder="Ex. Mia" #input>
-</mat-form-field>
 
-<button (click)="editUsers()">New User</button>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 table-container">
+  <div class="table-top flex justify-content-between align-items-center">
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="searchFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+    <button mat-stroked-button class="add-user-btn btn" (click)="editUsers()">New User</button>
+  </div>
   <table mat-table [dataSource]="dataSource" matSort>
 
     <ng-container matColumnDef="position">
@@ -44,7 +46,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      <td class="mat-cell" colspan="4">No User Data Found</td>
     </tr>
   </table>
 

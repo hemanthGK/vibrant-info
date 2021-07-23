@@ -1,0 +1,20 @@
+.confirm-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.confirm-btns button {
+  min-width: 70px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 0px;
+
+}
+.accept {
+  background: #673AB7;
+  color:#fff;
+}
+.decline {
+
+  color:#000
+}

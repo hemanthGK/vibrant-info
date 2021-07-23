@@ -1,3 +1,6 @@
-<p>Are you sure want to delete</p>
-<button mat-button color="accent"(click)="process()">Yes</button>
-<button mat-button color="warn"(click)="decline()">No</button>
+<h5>Are you sure want to delete</h5>
+<div class="confirm-btns">
+    <button mat-button class="accept" color="accent" (click)="process()">Yes</button>
+    <button mat-button class="decline" color="warn" (click)="decline()">No</button>
+</div>
+

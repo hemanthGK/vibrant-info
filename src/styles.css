@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a {
+    text-decoration: none;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.align-items-center {
+    align-items: center;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.btn {
+    background: #673ab7;
+    color: #fff;
+    padding: 2px 15px;
+    min-width: 100px;
+}
+.mat-form-field .mat-form-field-wrapper .mat-form-field-infix .mat-form-field-label mat-label {
+    font-size: 12px;
+}
